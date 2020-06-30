@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let todo = ['掃除', '買い物', '勉強会申し込み'];
+    function todo_list(){
+      console.log('=================');
+      for (const [key, value] of todo.entries()) {
+        console.log(`${key}：${value}`);
+      }
+      console.log('=================');
+    };
+    todo_list();
+    const new_todo = window.prompt('タスクを入力してください');
+    if (new_todo == '') {
+      window.alert('タスクを入力してください');
+    } else {
+      window.alert('追加しました！');
+      todo.push(new_todo);
+      todo_list();
+    }
+  </script>
+</body>
+</html>
