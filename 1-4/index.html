@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const todo = [
+      {content: "apple", genre: 'test'},
+      {content: "apple", genre: 'test'}
+    ];
+    function todo_list(){
+      console.log('=================');
+      console.log('現在行っているタスク一覧')
+      console.log('=================');
+      for(const [key, value] of todo.entries()) {
+        console.log(`${key}：[内容]${value.content}、[ジャンル]${value.genre}`);
+      }
+    }
+
+    todo_list();
+    var newTodo = new Object();
+    
+    const new_content  = window.prompt('タスクを入力してください');
+    if(new_content == '') {
+      window.alert('タスクを入力してください');
+    } else {
+      newTodo.content = new_content;
+      const new_genre = window.prompt('ジャンルを入力してください');
+      if(new_genre == '') {
+        window.alert('ジャンルを入力してください');
+      } else {
+        window.alert('追加しました！');
+        newTodo.genre = new_genre;
+        todo.push(newTodo);
+        todo_list();
+      }
+    }
+    
+
+    
+    
+    
+    
+  </script>
+</body>
+</html>
